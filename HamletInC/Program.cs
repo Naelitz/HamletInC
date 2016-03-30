@@ -12,7 +12,7 @@ namespace HamletInC
     class Program
     {
         // Used to easily direct to new file
-        static String FILE_NAME = "/HamletInC/HamletInC/Hamlet.txt";  
+        static String FILE_NAME = "C:/Users/Naelitz/Documents/HamletInC/HamletInC/Hamlet.txt";  
         static StreamReader reader = new StreamReader(FILE_NAME);
         static System.Diagnostics.Stopwatch timer; // Will be used to measure eficiency of different sorts.
         static UnsortedList chaosList = new UnsortedList();
@@ -30,13 +30,13 @@ namespace HamletInC
         
            
             CalcOverhead();
-            Console.WriteLine("\nCalculated over head time: " + overheadTime);
+            Console.WriteLine("\nCalculated over head time: " + overheadTime + " ms");
             CreateUnsorted();
-            Console.WriteLine("Calculated time to make unsorted list: " + chaosTime);
+            Console.WriteLine("Calculated time to make unsorted list: " + chaosTime + " ms");
             CreateAlphabetical();
-            Console.WriteLine("Calculated time to make self sorting list: " + selfSortTime);
+            Console.WriteLine("Calculated time to make self sorting list: " + selfSortTime + " ms");
             CreateSearchTree();
-            Console.WriteLine("\nCalculated time to make search tree: " + treeTime);
+            Console.WriteLine("\nCalculated time to make search tree: " + treeTime + " ms");
             tree.stat();
            
             
@@ -52,12 +52,13 @@ namespace HamletInC
                 String line = reader.ReadLine();
                 if (line != null)
                 {
+                    // This will remove all the common punctuation from the String.
                     var charsToRemove = new string[] { "@", ",", ".", ";", "'", "?", ":", "'", "!", "[", "]", "&"};
                     foreach (var c in charsToRemove)
                     {
                         line = line.Replace(c, string.Empty);
                     }
-
+                    // Takes the string of words and seperates it using spaces as delimiters.
                     String[] words = line.Split(' ');
                     foreach (var element in words)
                     {
