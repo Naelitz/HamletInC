@@ -12,7 +12,7 @@ namespace HamletInC
     class Program
     {
         // Used to easily direct to new file
-        static String FILE_NAME = "C:/Users/Naelitz/Documents/HamletInC/HamletInC/Hamlet.txt";  
+        static String FILE_NAME = "Hamlet.txt";  
         static StreamReader reader = new StreamReader(FILE_NAME);
         static System.Diagnostics.Stopwatch timer; // Will be used to measure eficiency of different sorts.
         static UnsortedList chaosList = new UnsortedList();
